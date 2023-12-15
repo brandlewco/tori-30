@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+
+body {
+    font-family: 'Special Elite', Courier, monospace;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #fff url(upscaler-desktop-view-2x.jpg) center center;
+    background-size: cover;
+}
+
+#typewriter {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fdfdfd;
+    background-image: url('seamless_paper_texture.webp');
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    font-family: 'Special Elite', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="typewriter">
+        <pre id="text"></pre>
+    </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var typewriter = document.getElementById('typewriter');
+    var textElement = document.getElementById('text');
+    var text = "Esteemed Friends,\n\n" +
+           "You are cordially invited to an evening of wonder and celebration, marking both the arrival of the New Year and the esteemed 30th anniversary of Tori Rahn’s voyage through life.\n\n" +
+           "This gathering promises to be an exquisite tapestry of bygone elegance and spirited conversation, set against a backdrop of whimsical charm. We request the pleasure of your company in attire that speaks of timeless grandeur and fanciful narratives.\n\n" +
+           "Join us as we toast to new beginnings and cherished tales at the stroke of midnight. Let us revel in an atmosphere where every moment is a keepsake and every memory a treasure.\n\n" +
+           "With warm regards and great anticipation,\n" +
+           "[Your Name]\n\n" +
+           "P.S. In this soiree of the surreal, your sartorial choice is your silent sonnet. Adorn yourself in garments that tell your story.";    var index = 0;
+    var lastHeight = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            var currentHeight = textElement.clientHeight;
+
+            // if (currentHeight > lastHeight) {
+            //     var heightDifference = currentHeight - lastHeight;
+            //     typewriter.style.transform = `translateY(-${heightDifference}px)`;
+            //     lastHeight = currentHeight;
+            // }
+
+            index++;
+            setTimeout(typeWriter, 25);
+        }
+    }
+
+    typeWriter();
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
