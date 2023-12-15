@@ -41,15 +41,22 @@
         bottom: 0;
         overflow: hidden;
       }
-
       #text {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        text-align: left;
-        padding: 20px;
-        font-family: "Special Elite", Courier, monospace;
-        font-size: 1.2rem;
-      }
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  padding: 20px;
+  font-family: "Special Elite", Courier, monospace;
+  font-size: 1.2rem;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  #text {
+    font-size: 1em; /* smaller font size on mobile devices */
+  }
+}
+
     </style>
   </head>
   <body>
@@ -62,14 +69,16 @@
       document.addEventListener("DOMContentLoaded", function () {
         var typewriter = document.getElementById("typewriter");
         var textElement = document.getElementById("text");
-        var text =
-          "Esteemed Friends,\n\n" +
-          "You are cordially invited to an evening of wonder and celebration, marking both the arrival of the New Year and the esteemed 30th anniversary of Tori Rahn’s voyage through life.\n\n" +
-          "This gathering promises to be an exquisite tapestry of bygone elegance and spirited conversation, set against a backdrop of whimsical charm. We request the pleasure of your company in attire that speaks of timeless grandeur and fanciful narratives.\n\n" +
-          "Join us as we toast to new beginnings and cherished tales at the stroke of midnight. Let us revel in an atmosphere where every moment is a keepsake and every memory a treasure.\n\n" +
-          "With warm regards and great anticipation,\n" +
-          "[Your Name]\n\n" +
-          "P.S. In this soiree of the surreal, your sartorial choice is your silent sonnet. Adorn yourself in garments that tell your story.";
+        var text = "Esteemed Friends,\n\n" +
+           "In the grand tradition of splendid gatherings and timeless adventures, we are thrilled to extend an exclusive invitation to you, our cherished circle of comrades. Prepare to immerse yourselves in an evening of wonder and celebration, meticulously crafted to mark not one, but two momentous occasions.\n\n" +
+           "As the hands of the clock align to bid adieu to the current year, we shall also be toasting to the esteemed 30th anniversary of Tori Rahn’s remarkable voyage through the ever-twisting corridors of life.\n\n" +
+           "Date: New Year’s Eve\n" +
+           "Time: When the evening star first winks @ 8PM\n" +
+           "Venue: 324 East Cornell Dr. Tempe, AZ 85283\n" +
+           "Dress Code: Dress your Wes (Anderson) – think pastels, tweeds, and a touch of the extraordinary. Become your own main character from the silver screen.\n\n" +
+           "Expect an evening brimming with whimsical delights, nostalgic tunes, and cinematographic elegance, all converging to create memories that will echo through the annals of time.\n\n" +
+           "Yours in anticipation of the unforgettable,\n\n" +
+           "Victoria";
         var index = 0;
         var lastHeight = 0;
 
